@@ -1,30 +1,64 @@
-# React + TypeScript + Vite
+# Приложение заметок
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Предварительные требования
 
-Currently, two official plugins are available:
+Убедитесь, что у вас установлены следующие инструменты:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Expanding the ESLint configuration
+## Начало работы
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Клонируйте этот репозиторий на свой локальный компьютер:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/qutha/notes-app
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Перейдите в директорию проекта:
+
+```bash
+cd notes-app
+```
+
+3. Соберите и запустите Docker-контейнеры:
+
+```bash
+docker-compose up -d --build
+```
+
+Откройте веб-браузер и перейдите по адресу http://localhost:5000, чтобы просмотреть приложение.
+
+### Остановка контейнеров
+
+```bash
+docker-compose down
+```
+
+## Запуск dev-сервера без docker-compose.
+
+1. Клонируйте этот репозиторий на свой локальный компьютер:
+
+```bash
+git clone https://github.com/qutha/notes-app
+```
+
+2. Перейдите в директорию проекта:
+
+```bash
+cd notes-app
+```
+
+3. Установите зависимости
+
+```bash
+npm install
+```
+
+4. Запустите dev-сервер
+
+```bash
+npm run dev
+```
+
+Откройте веб-браузер и перейдите по адресу http://localhost:5173/, чтобы просмотреть приложение.
